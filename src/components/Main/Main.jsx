@@ -23,6 +23,13 @@ const Main = () => {
     }
   }, [resultMarkdown]);
 
+  // ✅ New: handle Enter key press
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && input.trim() !== "") {
+      onSent();
+    }
+  };
+
   return (
     <div className="main">
       <div className="nav">
@@ -60,10 +67,7 @@ const Main = () => {
             </div>
           </>
         ) : (
-          <div
-            className="result"
-            ref={resultRef}
-          >
+          <div className="result" ref={resultRef}>
             <div className="result-title">
               <img src={assets.user_icon} alt="" />
               <p>{recentPrompt}</p>
@@ -88,12 +92,14 @@ const Main = () => {
 
         <div className="main-bottom">
           <div className="search-box">
-            <input
-              onChange={(e) => setInput(e.target.value)}
-              value={input}
+           <input
               type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={handleKeyDown}
               placeholder="Enter prompt here"
             />
+
             <div>
               <img src={assets.gallery_icon} alt="" />
               <img src={assets.mic_icon} alt="" />

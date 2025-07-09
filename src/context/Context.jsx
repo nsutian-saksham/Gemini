@@ -26,31 +26,32 @@ const ContextProvider = (props) => {
   };
 
   const onSent = async (prompt) => {
-  setResultMarkdown("");
-  setLoading(true);
-  setShowResult(true);
+    setInput("");
+    setResultMarkdown("");
+    setLoading(true);
+    setShowResult(true);
 
-  let response;
-  if (prompt !== undefined) {
-    response = await main(prompt);
-    setRecentPrompt(prompt);
-  } else {
-    setPreviousPrompt((prev) => [...prev, input]);
-    setRecentPrompt(input);
-    response = await main(input);
-  }
+    let response;
+    if (prompt !== undefined) {
+      response = await main(prompt);
+      setRecentPrompt(prompt);
+    } else {
+      setPreviousPrompt((prev) => [...prev, input]);
+      setRecentPrompt(input);
+      response = await main(input);
+    }
 
-  // ✅ Split by spaces AND preserve newlines
-  const tokens = response.split(/(\s+)/); 
+    // ✅ Split by spaces AND preserve newlines
+    const tokens = response.split(/(\s+)/); 
 
-  tokens.forEach((token, index) => {
-    setTimeout(() => {
-      setResultMarkdown((prev) => prev + token);
-    }, 20 * index); // Faster feels smoother for longer text
-  });
+    tokens.forEach((token, index) => {
+      setTimeout(() => {
+        setResultMarkdown((prev) => prev + token);
+      }, 20 * index); // Faster feels smoother for longer text
+    });
 
-  setLoading(false);
-  setInput("");
+    setLoading(false);
+    setInput("");
   };
 
 
