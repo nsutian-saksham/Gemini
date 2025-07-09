@@ -148,8 +148,9 @@
   gap: 20px;
 }
 
-.result-data img {
+.result-data img{
   flex-shrink: 0;
+  width: 40px;
 }
 
 .result-data .markdown-output {
