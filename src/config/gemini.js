@@ -1,14 +1,26 @@
+// config/gemini.js
+
 import { GoogleGenAI } from "@google/genai";
 
-// The client gets the API key from the environment variable `GEMINI_API_KEY`.
-const ai = new GoogleGenAI({apiKey: "AIzaSyDIe4-vMtiXhHFYIfFgMu7qksDwD6u6t60"});
+const ai = new GoogleGenAI({
+  apiKey: "AIzaSyDIe4-vMtiXhHFYIfFgMu7qksDwD6u6t60",
+});
 
-async function main() {
+async function main(prompt) {
   const response = await ai.models.generateContent({
     model: "gemini-2.5-flash",
-    contents: "Explain how AI works in a few words",
+    contents: [
+      {
+        role: "user",
+        parts: [{ text: prompt }],
+      },
+    ],
   });
-  console.log(response.text);
+
+  const result =
+    response?.candidates?.[0]?.content?.parts?.[0]?.text || "No response.";
+  console.log(result);
+  return result;
 }
 
 export default main;
