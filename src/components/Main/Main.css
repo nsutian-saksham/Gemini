@@ -1,8 +1,11 @@
+
 .main {
   flex: 1;
   min-height: 100vh;
   padding-bottom: 15vh;
   position: relative;
+  background-color: black;
+  color: white;
 }
 
 .main .nav {
@@ -11,7 +14,7 @@
   justify-content: space-between;
   font-size: 22px;
   padding: 20px;
-  color: #585858;
+  color: #999999;
 }
 
 .main .nav img {
@@ -38,6 +41,12 @@
   -webkit-text-fill-color: transparent;
 }
 
+.sub-line{
+    background: -webkit-linear-gradient(-90deg, rgb(83, 83, 83) 0%, rgb(68, 68, 68) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .main .cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -48,7 +57,7 @@
 .main .card {
   height: 200px;
   padding: 15px;
-  background-color: #f0f4f9;
+  background-color: #151515;
   border-radius: 10px;
   position: relative;
   cursor: pointer;
@@ -58,19 +67,19 @@
   width: 35px;
   padding: 5px;
   position: absolute;
-  background-color: white;
+  background-color: #151515;
   border-radius: 20px;
   bottom: 10px;
   right: 10px;
 }
 
 .main .card p {
-  color: #585858;
+  color: #999999;
   font-size: 17px;
 }
 
 .main .card:hover {
-  background-color: #dfe4ea;
+  background-color: #242424;
 }
 
 .main-bottom {
@@ -87,7 +96,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  background-color: #f0f4f9;
+  background-color: #252525;
   padding: 10px 20px;
   border-radius: 50px;
 }
@@ -104,6 +113,7 @@
   outline: none;
   padding: 8px;
   font-size: 18px;
+  color: #c4c7c5;
 }
 
 .search-box div {

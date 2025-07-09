@@ -37,7 +37,7 @@ const Main = () => {
               <p>
                 <span>Hello Dev</span>
               </p>
-              <p>How can I help you today</p>
+              <p className="sub-line">How can I help you today</p>
             </div>
 
             <div className="cards">
@@ -47,7 +47,7 @@ const Main = () => {
               </div>
               <div className="card">
                 <p>Briefly summarize this concept: sustainable ecosystem</p>
-                <img src={assets.message_icon} alt="" />
+                <img src={assets.message} alt="" />
               </div>
               <div className="card">
                 <p>Brainstorm ideas for our upcoming hackathon</p>

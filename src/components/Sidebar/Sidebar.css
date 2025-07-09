@@ -1,9 +1,11 @@
+
 .sidebar{
     min-height: 100vh;
     display: inline-flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #f0f4f9;
+    background-color: #151515;
+    color: #c4c7c5;
     padding: 25px 15px;
 }
 
@@ -23,11 +25,12 @@
     align-items: center;
     gap: 10px;
     padding: 10px 15px;
-    background-color: #e6eaf1;
+    background-color: #161616;
     border-radius: 50px;
     font-size: 14px;
-    color: grey;
+    color: #c4c7c5;
     cursor: pointer;
+    border: 1px solid #272727c7
 }
 
 .sidebar .recent {
@@ -48,12 +51,13 @@
     padding: 10px;
     padding-right: 40px;
     border-radius: 50px;
-    color: #282828;
+    color: #c4c7c5;
     cursor: pointer;
 }
 
 .sidebar .recent-entry:hover{
-    background-color: #e2e6eb;
+    background-color: #242424;
+    color: white;
 }
 
 .sidebar .bottom{
